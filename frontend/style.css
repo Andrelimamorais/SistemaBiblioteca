@@ -216,6 +216,7 @@ input::placeholder {
 .out-btn {
   background: transparent;
   border-color: #fc8181;
+  color: #fc8181;
 }
 
 .out-btn:hover {
