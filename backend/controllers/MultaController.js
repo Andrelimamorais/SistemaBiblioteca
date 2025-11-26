@@ -15,16 +15,6 @@ async pagar(req, res) {
     }
 }
 
-  async pagar(req, res) {
-    try {
-      const { id } = req.params;
-      await this.multaService.pagar(id);
-      return res.json({ mensagem: 'Multa paga com sucesso' });
-    } catch (error) {
-      return res.status(500).json({ erro: error.message });
-    }
-  }
-
   async buscarPorId(req, res) {
     try {
       const { id } = req.params;

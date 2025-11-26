@@ -23,6 +23,35 @@
       <main class="main">
         <section>
           <h2>Gerenciar Livros</h2>
+
+          <div class="search-container">
+            <input
+              type="text"
+              id="buscar-livro"
+              placeholder="Buscar livro pelo título..."
+            />
+            <button class="btn-secondary" id="limpar-busca-livro">
+              Limpar
+            </button>
+          </div>
+
+          <div class="table-container">
+            <table id="livros-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Título</th>
+                  <th>Autor</th>
+                  <th>Ano</th>
+                  <th>Categoria</th>
+                  <th>Situação</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
           <div class="form-container">
             <h3>Adicionar Novo Livro</h3>
             <form id="form-livro">
@@ -38,7 +67,7 @@
                 type="text"
                 id="livro-autor"
                 placeholder="Autor"
-                pattern="[A-Za-zÀ-ÿ\s]+"
+                pattern="^[A-Za-zÀ-ÿ.\s]+$"
                 title="Digite apenas letras"
                 required
               />
@@ -52,41 +81,12 @@
                 type="text"
                 id="livro-categoria"
                 placeholder="Categoria"
-                pattern="[A-Za-zÀ-ÿ\s]+"
+                pattern="[A-Za-zÀ-ÿ\s,]+"
                 title="Digite apenas letras"
                 required
               />
               <button type="submit" class="btn-primary">Adicionar Livro</button>
             </form>
-          </div>
-
-          <div class="search-container">
-            <input
-              type="text"
-              id="buscar-livro"
-              placeholder="Buscar livro pelo título..."
-            />
-            <button class="btn-secondary" id="limpar-busca-livro">
-              Limpar
-            </button>
-          </div>
-
-          <div class="table-container">
-            <h3>Lista de Livros</h3>
-            <table id="livros-table">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Título</th>
-                  <th>Autor</th>
-                  <th>Ano</th>
-                  <th>Categoria</th>
-                  <th>Disponível</th>
-                  <th>Ações</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
           </div>
         </section>
       </main>

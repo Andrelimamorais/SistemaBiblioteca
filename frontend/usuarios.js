@@ -30,6 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+function formatarTelefoneBR(numero) {
+  numero = numero.replace(/\D/g, ""); // remove tudo que não for número
+
+  if (numero.length === 11) {
+    // Com nono dígito (ex: 85994039818)
+    return `(${numero.slice(0, 2)}) ${numero.slice(2, 7)}-${numero.slice(7)}`;
+  } else if (numero.length === 10) {
+    // Sem nono dígito
+    return `(${numero.slice(0, 2)}) ${numero.slice(2, 6)}-${numero.slice(6)}`;
+  }
+
+  return numero; // retorna como está se não bater com padrões esperados
+}
+
   const busca = document.getElementById('buscar-usuario');
   if (busca) {
     busca.addEventListener('keyup', buscarUsuarioTempoReal);

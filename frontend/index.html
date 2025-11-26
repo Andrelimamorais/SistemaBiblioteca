@@ -7,27 +7,43 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <div>
       <header class="header">
         <h1>Biblioteca Universitária</h1>
       </header>
 
       <main class="main">
         <section class="page active">
-          <h2 style="color: #591902;">Navegação</h2>
+          <h2 style="color: white">Navegação</h2>
           <div class="table-container">
-            <ul style="list-style: none; padding: 10px; display: grid; gap: 29px;">
+            <ul
+              style="list-style: none; padding: 10px; display: grid; gap: 29px"
+            >
               <li><a class="btn-primary" href="usuarios.html">Usuários</a></li>
               <li><a class="btn-primary" href="livros.html">Livros</a></li>
-              <li><a class="btn-primary" href="emprestimos.html">Empréstimos</a></li>
+              <li>
+                <a class="btn-primary" href="emprestimos.html">Empréstimos</a>
+              </li>
               <li><a class="btn-primary" href="multas.html">Multas</a></li>
-              <li><button class="btn-secondary out-btn" onclick="deslogar()">Sair</button></li>
+              <li>
+                <button class="btn-secondary out-btn" onclick="deslogar()">
+                  Sair
+                </button>
+              </li>
             </ul>
+            <div class="text-container">
+              <p>
+                Bem vindo ao
+                <strong style="color: #2F3775">Sistema de Biblioteca</strong>
+              </p>
+              <p style="font-size: 18pt">
+                Sitema de emprestimos e gestao de usuarios e livros de
+                Bibliotecas
+              </p>
+            </div>
           </div>
         </section>
       </main>
-
-
     </div>
 
     <script src="app.js"></script>

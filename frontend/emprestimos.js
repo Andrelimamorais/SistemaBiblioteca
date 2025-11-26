@@ -36,6 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (limparBtn) limparBtn.addEventListener('click', carregarEmprestimos);
 });
 
+function formatarDataBR(data) {
+  if (!data) return "-";
+  const d = new Date(data);
+  if (isNaN(d)) return data; 
+  return d.toLocaleDateString("pt-BR", { timeZone: "UTC" });
+}
+
 async function carregarEmprestimos() {
   try {
     const response = await fetch(`${API_URL}/emprestimos`);
@@ -70,13 +77,12 @@ async function carregarEmprestimos() {
         <td>${emp.id_emprestimo}</td>
         <td>${emp.usuario_nome || emp.usuario || '-'}</td>
         <td>${emp.livro_titulo || emp.titulo || '-'}</td>
-        <td>${emp.data_retirada}</td>
-        <td>${emp.data_prevista_devolucao}</td>
-        <td>${dataDevolucao}</td>
-        <td>${multaDisplay}</td>
+        <td>${formatarDataBR(emp.data_retirada)}</td>
+        <td>${formatarDataBR(emp.data_prevista_devolucao)}</td>
+        <td>${formatarDataBR(dataDevolucao)}</td>
         <td>
           ${btnDevolver}
-          <button class="btn-delete" onclick="deletarEmprestimo(${emp.id_emprestimo})">Deletar</button>
+          <button class="btn-delete" style="margin-top: 1px" onclick="deletarEmprestimo(${emp.id_emprestimo})">Deletar</button>
         </td>
       `;
       tbody.appendChild(tr);
@@ -197,10 +203,9 @@ async function buscarEmprestimo() {
         <td>${emp.id_emprestimo}</td>
         <td>${emp.usuario_nome || emp.usuario || '-'}</td>
         <td>${emp.livro_titulo || emp.titulo || '-'}</td>
-        <td>${emp.data_retirada}</td>
-        <td>${emp.data_prevista_devolucao}</td>
-        <td>${dataDevolucao}</td>
-        <td>${multaDisplay}</td>
+        <td>${formatarDataBR(emp.data_retirada)}</td>
+        <td>${formatarDataBR(emp.data_prevista_devolucao)}</td>
+        <td>${formatarDataBR(dataDevolucao)}</td>
         <td>
           ${btnDevolver}
           <button class="btn-delete" onclick="deletarEmprestimo(${emp.id_emprestimo})">Deletar</button>

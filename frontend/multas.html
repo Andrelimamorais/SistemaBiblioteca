@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-     <header class="header">
+      <header class="header">
         <h1>Biblioteca</h1>
         <nav class="nav">
           <a class="nav-btn" href="index.html">Voltar</a>
@@ -23,42 +23,70 @@
       <main class="main">
         <section>
           <h2>Gerenciar Multas</h2>
-          <div class="form-container">
-            <h3>Registrar / Editar Multa</h3>
-            <form id="form-multa">
-              <input type="hidden" id="multa-id">
-              <input type="number" id="multa-emprestimo-id" placeholder="ID do Empréstimo" required>
-              <input type="number" step="0.01" id="multa-valor" placeholder="Valor da Multa" required>
-              <label>
-                <input type="checkbox" id="multa-pago"> Pago
-              </label>
-              <p id="mensagemErro" style="color: red; font-weight: bold; display: none;"></p>
-              <button type="submit" class="btn-primary">Salvar Multa</button>
-              <button type="button" id="btn-limpar-form-multa" class="btn-secondary">Limpar</button>
-            </form>
-          </div>
 
           <div class="search-container">
-            <input type="text" id="buscar-multa" placeholder="Buscar multa pelo nome do usuário..." />
-            <button class="btn-secondary" id="limpar-busca-multa">Limpar</button>
+            <input
+              type="text"
+              id="buscar-multa"
+              placeholder="Buscar multa pelo nome do usuário..."
+            />
+            <button class="btn-secondary" id="limpar-busca-multa">
+              Limpar
+            </button>
           </div>
 
           <div class="table-container">
-            <h3>Lista de Multas</h3>
             <table id="multas-table">
               <thead>
-                <tr><th>ID</th><th>Usuário</th><th>Empréstimo</th><th>Valor</th><th>Status</th><th>Ações</th></tr>
+                <tr>
+                  <th>ID</th>
+                  <th>Usuário</th>
+                  <th>Empréstimo</th>
+                  <th>Valor</th>
+                  <th>Situação</th>
+                  <th>Ações</th>
+                </tr>
               </thead>
               <tbody></tbody>
             </table>
           </div>
+
+          <div class="form-container">
+            <h3>Registrar / Editar Multa</h3>
+            <form id="form-multa">
+              <input type="hidden" id="multa-id" />
+              <input
+                type="number"
+                id="multa-emprestimo-id"
+                placeholder="ID do Empréstimo"
+                required
+              />
+              <input
+                type="number"
+                step="0.01"
+                id="multa-valor"
+                placeholder="Valor da Multa"
+                required
+              />
+              <p
+                id="mensagemErro"
+                style="color: red; font-weight: bold; display: none"
+              ></p>
+              <button type="submit" class="btn-primary">Salvar Multa</button>
+              <button
+                type="button"
+                id="btn-limpar-form-multa"
+                class="btn-secondary"
+              >
+                Limpar
+              </button>
+            </form>
+          </div>
         </section>
       </main>
-
-
     </div>
 
-    <div id="modalPagamento" class="modal" style="display:none;">
+    <div id="modalPagamento" class="modal" style="display: none">
       <div class="modal-content">
         <h3>Pagamento da Multa</h3>
         <label for="formaPagamento">Forma de pagamento:</label>
@@ -68,7 +96,9 @@
           <option value="cartao">Cartão</option>
         </select>
         <div class="modal-actions">
-          <button class="btn-primary" id="confirmar-pagamento">Confirmar</button>
+          <button class="btn-primary" id="confirmar-pagamento">
+            Confirmar
+          </button>
           <button class="btn-secondary" id="fechar-pagamento">Cancelar</button>
         </div>
       </div>

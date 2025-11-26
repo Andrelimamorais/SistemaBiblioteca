@@ -8,7 +8,7 @@
   </head>
   <body>
     <div class="container">
-     <header class="header">
+      <header class="header">
         <h1>Biblioteca</h1>
         <nav class="nav">
           <a class="nav-btn" href="index.html">Voltar</a>
@@ -23,6 +23,38 @@
       <main class="main">
         <section>
           <h2>Gerenciar Empréstimos</h2>
+
+          <div class="search-container">
+            <input
+              type="text"
+              id="buscar-emprestimo"
+              placeholder="Buscar empréstimo pelo nome do usuário..."
+            />
+            <button class="btn-primary" id="buscar-emprestimo-btn">
+              Buscar
+            </button>
+            <button class="btn-secondary" id="limpar-emprestimos">
+              Limpar
+            </button>
+          </div>
+
+          <div class="table-container">
+            <table id="emprestimos-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Usuário</th>
+                  <th>Livro</th>
+                  <th>Data Retirada</th>
+                  <th>Data Prevista</th>
+                  <th>Data Devolução</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
           <div class="form-container">
             <h3>Realizar Novo Empréstimo</h3>
             <form id="form-emprestimo">
@@ -32,29 +64,19 @@
               <select id="emprestimo-livro" required>
                 <option value="">Selecione um Livro</option>
               </select>
-              <input type="number" id="emprestimo-dias" placeholder="Dias de Empréstimo" value="7" min="1">
-              <button type="submit" class="btn-primary">Realizar Empréstimo</button>
+              <input
+                type="number"
+                id="emprestimo-dias"
+                placeholder="Dias de Empréstimo"
+                min="1"
+              />
+              <button type="submit" class="btn-primary">
+                Realizar Empréstimo
+              </button>
             </form>
-          </div>
-
-          <div class="search-container">
-            <input type="text" id="buscar-emprestimo" placeholder="Buscar empréstimo pelo nome do usuário..." />
-            <button class="btn-primary" id="buscar-emprestimo-btn">Buscar</button>
-            <button class="btn-secondary" id="limpar-emprestimos">Limpar</button>
-          </div>
-
-          <div class="table-container">
-            <h3>Lista de Empréstimos</h3>
-            <table id="emprestimos-table">
-              <thead>
-                <tr><th>ID</th><th>Usuário</th><th>Livro</th><th>Data Retirada</th><th>Data Prevista</th><th>Data Devolução</th><th>Multa</th><th>Ações</th></tr>
-              </thead>
-              <tbody></tbody>
-            </table>
           </div>
         </section>
       </main>
-
     </div>
 
     <script src="app.js"></script>

@@ -23,6 +23,34 @@
       <main class="main">
         <section>
           <h2>Gerenciar Usuários</h2>
+
+          <div class="search-container">
+            <input
+              type="text"
+              id="buscar-usuario"
+              placeholder="Buscar usuário pelo nome completo..."
+            />
+            <button class="btn-secondary" id="limpar-busca-usuario">
+              Limpar
+            </button>
+          </div>
+
+          <div class="table-container"> 
+            <table id="usuarios-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Matrícula</th>
+                  <th>Email</th>
+                  <th>Telefone</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+
           <div class="form-container">
             <h3>Adicionar Novo Usuário</h3>
             <form id="form-usuario">
@@ -36,7 +64,7 @@
               />
               <input
                 type="number"
-                id="usuario-numero"
+                id="usuario-matricula"
                 placeholder="Matrícula (somente números)"
                 required
               />
@@ -44,8 +72,8 @@
                 type="email"
                 id="usuario-email"
                 placeholder="Email"
-                pattern="[A-Za-zÀ-ÿ\s]+"
-                title="Digite apenas letras"
+                pattern="[A-Za-zÀ-ÿ._]+@[A-Za-zÀ-ÿ._]+\.[A-Za-zÀ-ÿ._]+"
+                title="Use apenas letras"
                 required
               />
               <input
@@ -60,34 +88,6 @@
                 Adicionar Usuário
               </button>
             </form>
-          </div>
-
-          <div class="search-container">
-            <input
-              type="text"
-              id="buscar-usuario"
-              placeholder="Buscar usuário pelo nome completo..."
-            />
-            <button class="btn-secondary" id="limpar-busca-usuario">
-              Limpar
-            </button>
-          </div>
-
-          <div class="table-container">
-            <h3>Lista de Usuários</h3>
-            <table id="usuarios-table">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>Nome</th>
-                  <th>Matrícula</th>
-                  <th>Email</th>
-                  <th>Telefone</th>
-                  <th>Ações</th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
           </div>
         </section>
       </main>

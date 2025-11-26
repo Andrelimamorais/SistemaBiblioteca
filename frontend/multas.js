@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const id = document.getElementById('multa-id').value;
       const id_emprestimo = document.getElementById('multa-emprestimo-id').value;
       const valor = document.getElementById('multa-valor').value;
-      const pago = document.getElementById('multa-pago').checked;
 
       const url = id ? `${API_URL}/multas/${id}` : `${API_URL}/multas`;
       const method = id ? 'PUT' : 'POST';
@@ -18,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const response = await fetch(url, {
           method,
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ id_emprestimo, valor, pago })
+          body: JSON.stringify({ id_emprestimo, valor})
         });
         if (response.ok) {
           alert(`Multa ${id ? 'atualizada' : 'cadastrada'} com sucesso!`);
