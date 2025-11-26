@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Livros — Biblioteca</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Biblioteca</h1>
+        <nav class="nav">
+          <a class="nav-btn" href="index.html">Voltar</a>
+          <a class="nav-btn" href="usuarios.html">Usuários</a>
+          <a class="nav-btn active" href="livros.html">Livros</a>
+          <a class="nav-btn" href="emprestimos.html">Empréstimos</a>
+          <a class="nav-btn" href="multas.html">Multas</a>
+          <button class="nav-btn out-btn" onclick="deslogar()">Sair</button>
+        </nav>
+      </header>
+
+      <main class="main">
+        <section>
+          <h2>Gerenciar Livros</h2>
+          <div class="form-container">
+            <h3>Adicionar Novo Livro</h3>
+            <form id="form-livro">
+              <input
+                type="text"
+                id="livro-titulo"
+                placeholder="Título"
+                pattern="[A-Za-zÀ-ÿ\s]+"
+                title="Digite apenas letras"
+                required
+              />
+              <input
+                type="text"
+                id="livro-autor"
+                placeholder="Autor"
+                pattern="[A-Za-zÀ-ÿ\s]+"
+                title="Digite apenas letras"
+                required
+              />
+              <input
+                type="number"
+                id="livro-ano"
+                placeholder="Ano (somente números)"
+                required
+              />
+              <input
+                type="text"
+                id="livro-categoria"
+                placeholder="Categoria"
+                pattern="[A-Za-zÀ-ÿ\s]+"
+                title="Digite apenas letras"
+                required
+              />
+              <button type="submit" class="btn-primary">Adicionar Livro</button>
+            </form>
+          </div>
+
+          <div class="search-container">
+            <input
+              type="text"
+              id="buscar-livro"
+              placeholder="Buscar livro pelo título..."
+            />
+            <button class="btn-secondary" id="limpar-busca-livro">
+              Limpar
+            </button>
+          </div>
+
+          <div class="table-container">
+            <h3>Lista de Livros</h3>
+            <table id="livros-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Título</th>
+                  <th>Autor</th>
+                  <th>Ano</th>
+                  <th>Categoria</th>
+                  <th>Disponível</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="livros.js"></script>
+  </body>
+</html>

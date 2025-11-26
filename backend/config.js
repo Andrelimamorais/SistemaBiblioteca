@@ -5,7 +5,7 @@ module.exports = {
   database: {
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',
-    password: process.env.DB_PASSWORD || 'Ped@nde2004',
+    password: process.env.DB_PASSWORD || 'Lim@Lim@o29465',
     database: process.env.DB_NAME || 'bibliotecaad',
     port: process.env.DB_PORT || 3306,
     waitForConnections: true,

@@ -52,6 +52,16 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.out-btn {
+  background-color: red;
+    color: white;
+}
+
+.out-btn:hover {
+  background-color: darkred;
+  color: white;
+}
+
 .nav-btn.active {
   background-color: #591902;
   color: white;
@@ -68,6 +78,7 @@ body {
 
 .page {
   display: none;
+
 }
 
 .page.active {
@@ -186,6 +197,7 @@ textarea:focus {
   font-size: 14px;
   font-weight: bold;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .btn-primary:hover {

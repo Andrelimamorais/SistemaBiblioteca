@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Usuários — Biblioteca</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>Biblioteca</h1>
+        <nav class="nav">
+          <a class="nav-btn" href="index.html">Voltar</a>
+          <a class="nav-btn active" href="usuarios.html">Usuários</a>
+          <a class="nav-btn" href="livros.html">Livros</a>
+          <a class="nav-btn" href="emprestimos.html">Empréstimos</a>
+          <a class="nav-btn" href="multas.html">Multas</a>
+          <button class="nav-btn out-btn" onclick="deslogar()">Sair</button>
+        </nav>
+      </header>
+
+      <main class="main">
+        <section>
+          <h2>Gerenciar Usuários</h2>
+          <div class="form-container">
+            <h3>Adicionar Novo Usuário</h3>
+            <form id="form-usuario">
+              <input
+                type="text"
+                id="usuario-nome"
+                placeholder="Nome Completo"
+                pattern="[A-Za-zÀ-ÿ\s]+"
+                title="Digite apenas letras"
+                required
+              />
+              <input
+                type="number"
+                id="usuario-numero"
+                placeholder="Matrícula (somente números)"
+                required
+              />
+              <input
+                type="email"
+                id="usuario-email"
+                placeholder="Email"
+                pattern="[A-Za-zÀ-ÿ\s]+"
+                title="Digite apenas letras"
+                required
+              />
+              <input
+                type="tel"
+                id="usuario-telefone"
+                placeholder="Telefone (somente números)"
+                pattern="[0-9]*"
+                inputmode="numeric"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+              />
+              <button type="submit" class="btn-primary">
+                Adicionar Usuário
+              </button>
+            </form>
+          </div>
+
+          <div class="search-container">
+            <input
+              type="text"
+              id="buscar-usuario"
+              placeholder="Buscar usuário pelo nome completo..."
+            />
+            <button class="btn-secondary" id="limpar-busca-usuario">
+              Limpar
+            </button>
+          </div>
+
+          <div class="table-container">
+            <h3>Lista de Usuários</h3>
+            <table id="usuarios-table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nome</th>
+                  <th>Matrícula</th>
+                  <th>Email</th>
+                  <th>Telefone</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="usuarios.js"></script>
+  </body>
+</html>

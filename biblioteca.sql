@@ -1,5 +1,5 @@
-CREATE DATABASE biblioteca;
-USE biblioteca;
+CREATE DATABASE bibliotecaad;
+USE bibliotecaad;
 
 CREATE TABLE usuario (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,

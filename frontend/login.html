@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Biblioteca Universitária - Login</title>
   <style>
-Login.css
 
  * {
       margin: 0;
@@ -323,11 +322,9 @@ Login.css
     });
 
   
-    function mostrarSistema(usuario) {
-      document.getElementById('loginContainer').style.display = 'none';
-      document.getElementById('sistemaContainer').classList.add('active');
-      document.getElementById('nomeUsuarioLogado').textContent = usuario;
-    }
+    /* A exibição do sistema é feita pela função mostrarSistema abaixo,
+       que salva o usuário no localStorage e redireciona para a página
+       de navegação principal (index.html). */
 
 
     function logout() {
