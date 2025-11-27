@@ -33,9 +33,10 @@ class EmprestimoService {
       throw new Error('Livro não está disponível');
     }
 
+    const dias = Number.isInteger(Number(dados.dias_emprestimo)) && Number(dados.dias_emprestimo) > 0 ? Number(dados.dias_emprestimo) : 7;
     const dataRetirada = new Date();
     const dataPrevistaDevolucao = new Date(dataRetirada);
-    dataPrevistaDevolucao.setDate(dataPrevistaDevolucao.getDate() + (dados.dias_emprestimo || 7));
+    dataPrevistaDevolucao.setDate(dataPrevistaDevolucao.getDate() + dias);
 
     const emprestimo = new Emprestimo(
       null,
